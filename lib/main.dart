@@ -22,6 +22,11 @@ class _DatapageState extends State<Datapage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Random - User"),
+        backgroundColor: Colors.black,
+        centerTitle: true,
+      ),
       body: FutureBuilder(
         future: UserAPIHelper.userAPIHelper.fetchingUserData(),
         builder: (context, snapshot) {
@@ -38,55 +43,24 @@ class _DatapageState extends State<Datapage> {
                   height: double.infinity,
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                        Colors.black,
-                        Colors.white,
-                      ])),
+                    color: Colors.white,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                       right: 20, left: 20, top: 50, bottom: 30),
-                  child: GlassmorphicContainer(
+                  child: Container(
                       width: 900,
                       height: 1500,
-                      borderRadius: 20,
-                      blur: 15,
-                      border: 1,
-                      linearGradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            const Color(0xFFffffff).withOpacity(0.3),
-                            const Color(0xFFFFFFFF).withOpacity(0.1),
-                          ],
-                          stops: const [
-                            0.1,
-                            1,
-                          ]),
-                      borderGradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          const Color(0xFFffffff).withOpacity(0.5),
-                          const Color((0xFFFFFFFF)).withOpacity(0.5),
-                        ],
-                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(100),
-                              child: Image.network(data!.photo),
-                            ),
                             Text(
-                              data.name,
+                              data!.name,
                               style: const TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -96,12 +70,12 @@ class _DatapageState extends State<Datapage> {
                                   "Email : ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 ),
                                 const Spacer(),
                                 Text(
                                   data.mail,
-                                  style: const TextStyle(color: Colors.white),
+                                  style: const TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -111,12 +85,12 @@ class _DatapageState extends State<Datapage> {
                                   "Phone : ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 ),
                                 const Spacer(),
                                 Text(
                                   data.phoneNumber.toString(),
-                                  style: const TextStyle(color: Colors.white),
+                                  style: const TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -126,12 +100,12 @@ class _DatapageState extends State<Datapage> {
                                   "BOD : ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 ),
                                 const Spacer(),
                                 Text(
                                   data.bod.toString().split("T")[0],
-                                  style: const TextStyle(color: Colors.white),
+                                  style: const TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -141,12 +115,12 @@ class _DatapageState extends State<Datapage> {
                                   "Age : ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 ),
                                 const Spacer(),
                                 Text(
                                   data.age.toString(),
-                                  style: const TextStyle(color: Colors.white),
+                                  style: const TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -156,12 +130,12 @@ class _DatapageState extends State<Datapage> {
                                   "Gender : ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 ),
                                 const Spacer(),
                                 Text(
                                   data.gender,
-                                  style: const TextStyle(color: Colors.white),
+                                  style: const TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -171,12 +145,12 @@ class _DatapageState extends State<Datapage> {
                                   "Location : ",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 ),
                                 const Spacer(),
                                 Text(
                                   data.location,
-                                  style: const TextStyle(color: Colors.white),
+                                  style: const TextStyle(color: Colors.black),
                                   textAlign: TextAlign.end,
                                 ),
                               ],
@@ -196,8 +170,8 @@ class _DatapageState extends State<Datapage> {
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                     colors: [
-                                      const Color(0xFFffffff).withOpacity(0.1),
-                                      const Color(0xFFFFFFFF).withOpacity(0.05),
+                                      Colors.black,
+                                      Colors.grey,
                                     ],
                                     stops: const [
                                       0.1,
@@ -207,15 +181,15 @@ class _DatapageState extends State<Datapage> {
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                   colors: [
-                                    const Color(0xFFffffff).withOpacity(0.5),
-                                    const Color((0xFFFFFFFF)).withOpacity(0.5),
+                                    Colors.black,
+                                    Colors.grey,
                                   ],
                                 ),
                                 child: const Center(
                                     child: Text(
                                   "Change",
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20),
                                 )),
