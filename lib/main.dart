@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-
-import '../helpers/helper.dart';
-import '../modeles/Model.dart';
+import 'package:random_user_data/helpers/helper.dart';
+import 'package:random_user_data/modeles/Model.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -57,6 +56,11 @@ class _DatapageState extends State<Datapage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Image.network(
+                                  "https://in.images.search.yahoo.com/search/images;_ylt=AwrPpjYa3NRj33kj6nG7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=person+images&fr2=piv-web&type=E210IN826G0&fr=mcafee"),
+                            ),
                             Text(
                               data!.name,
                               style: const TextStyle(
